@@ -52,6 +52,29 @@
 
 //8.
 //After the code below is executed, what will be the value of $text and what will strlen($text) return? Explain your answer.
-$text='Jone';
-$text[10]='Deo';
-echo strlen($text);
+//$text='Jone';
+//$text[10]='Deo';
+//echo strlen($text);
+
+//PHP_INT_MAX is a PHP constant that corresponds to the largest supported integer value (value is based on the version of PHP being run and the platform it is running on).
+//
+//Assume that var_dump(PHP_INT_MAX) will yield int(9223372036854775807).
+//
+//    In that case, what will be the result of var_dump(PHP_INT_MAX + 1)? Also, what will be the result of var_dump((int)(PHP_INT_MAX + 1))?
+//
+//    NOTE: It’s not important to supply the exact value when answering the question, but rather to explain what will happen and why.
+//var_dump((int)(PHP_INT_MAX+1));
+//10.
+//What does the follow code echo?
+
+//$a ="PHP";
+//$a = $a + 1;
+//echo $a;
+
+//How would you sort an array of strings to their natural case-insensitive order, while maintaing their original index association?
+//
+//For example, the following array:
+
+$array = array('0'=>'z1', '1'=>'Z10', '2'=>'Z12', '3'=>'z2', '4'=>'z3');
+asort($array, SORT_STRING | SORT_FLAG_CASE| SORT_NATURAL);
+var_dump($array);;;
