@@ -52,6 +52,24 @@
 
 //8.
 //After the code below is executed, what will be the value of $text and what will strlen($text) return? Explain your answer.
-$text='Jone';
-$text[10]='Deo';
-echo strlen($text);
+//$text='Jone';
+//$text[10]='Deo';
+//echo strlen($text);
+
+//What will be the value of $x after this code executes? Explain your answer.
+
+$x=NULL;
+$a=255;
+$b='0xFF';
+if (hexdec($b)==$a){
+    echo $x=hexdec($b);
+}
+//echo is_numaric_string($b);
+
+//16.
+//How can you tell if a number is even or odd without using any condition or loop?
+
+echo '<br>';
+$arr=array('0'=>'Even','1'=>'Odd');
+$check=13;
+echo 'This number is '.$check.' = '.$arr[$check%2];
