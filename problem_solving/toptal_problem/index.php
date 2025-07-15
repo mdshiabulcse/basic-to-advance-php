@@ -75,6 +75,57 @@
 //
 //For example, the following array:
 
-$array = array('0'=>'z1', '1'=>'Z10', '2'=>'Z12', '3'=>'z2', '4'=>'z3');
-asort($array, SORT_STRING | SORT_FLAG_CASE| SORT_NATURAL);
-var_dump($array);;;
+//$array = array('0'=>'z1', '1'=>'Z10', '2'=>'Z12', '3'=>'z2', '4'=>'z3');
+//asort($array, SORT_STRING | SORT_FLAG_CASE| SORT_NATURAL);
+//var_dump($array);;;
+//
+//
+//echo '<br>';
+//
+////Highlight all the Chinese characters in red and return the string.
+//$str = 'drinking giving jogging 喝 喝 passing 制图 giving 跑步 吃';
+//$string=explode(' ', $str);
+//$chi=array_filter(explode('_',preg_replace(array('/[^\p{Han}？]/u', '/(\s)+/'), array('_', '$1'),$str)));
+//$value=array();
+//foreach ($string as $val){
+//    if (in_array($val, $chi)){
+//         $value[]='<span style="color: red">'.$val.'<span></span><br>';
+//    }else{
+//         $value[]='<span style="color: green">'.$val.'<span></span><br>';
+//    }
+//}
+//echo (implode(' ', $value));
+//
+//
+//
+//echo '<br>';
+//
+//$str1='yabadabadoo';
+//$str2='yaba';
+//if (strpos($str1, $str2) !== false) {
+//    echo "\"" . $str1 . "\" contains \"" . $str2 . "\"";
+//}else{
+//    echo "\"" . $str1 . "\" does not contain \"" . $str2 . "\"";
+//}
+//
+//echo '<br>';
+
+
+
+class Car
+{
+    public $color;
+    public $model;
+    public function __construct($color, $model)
+    {
+        $this->color = $color;
+        $this->model = $model;
+    }
+    public function display()
+    {
+        echo $this->color . ' ' . $this->model;
+    }
+
+}
+$car = new Car('red', 'BMW');
+$car->display();
