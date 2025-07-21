@@ -112,20 +112,95 @@
 
 
 
-class Car
-{
-    public $color;
-    public $model;
-    public function __construct($color, $model)
-    {
-        $this->color = $color;
-        $this->model = $model;
-    }
-    public function display()
-    {
-        echo $this->color . ' ' . $this->model;
-    }
+//class Car
+//{
+//    public $color;
+//    public $model;
+//    public function __construct($color, $model)
+//    {
+//        $this->color = $color;
+//        $this->model = $model;
+//    }
+//    public function display()
+//    {
+//        echo $this->color . ' ' . $this->model;
+//    }
+//
+//}
+//$car = new Car('red', 'BMW');
+//$car->display();
 
+
+//$x = 5;
+//echo $x;
+//echo "<br />";
+//echo $x+++$x++;
+//echo "<br />";
+//echo $x;
+//echo "<br />";
+//echo $x-- - $x--;
+//echo "<br />";
+//echo $x;
+
+
+//$array=['a','b','c','d','e','f','a','b','c','d','e','f','a','b','c','d','e','f','a'];
+//function removeDuplicates($array)
+//{
+//    $result=[];
+//    foreach($array as $value){
+//        if(!in_array($value,$result)){
+//            $result[]=$value;
+//        }
+//    }
+//    return $result;
+//}
+//
+//print_r( removeDuplicates($array));
+
+//function reverse($reverse)
+//{
+//    $words=explode(" ",$reverse);
+//    $reverseWords=[];
+//    foreach($words as $word){
+//        $reversed='';
+//        for ($i=strlen($word) -1;$i >=0;$i--){
+//            $reversed.=$word[$i];
+//        }
+//        $reverseWords[]=$reversed;
+//    }
+//    return implode(" ",$reverseWords);
+//
+//}
+//echo reverse("I ma bikhaS");
+
+
+//function firstNonRepeatingChar($str) {
+//    $charCount = [];
+//
+//    for ($i = 0; $i < strlen($str); $i++) {
+//        $char = $str[$i];
+//        $charCount[$char] = isset($charCount[$char]) ? $charCount[$char] + 1 : 1;
+//    }
+//
+//    for ($i = 0; $i < strlen($str); $i++) {
+//        if ($charCount[$str[$i]] === 1) {
+//            return $str[$i];
+//        }
+//    }
+//    return null;
+//}
+//
+//echo firstNonRepeatingChar("aabbcddeffg");
+
+function fibonacci($n)
+{
+    $a=0; $b=1;
+    echo "$a $b ";
+    for ($i=2; $i<=$n; $i++) {
+        $next=$a+$b;
+        echo "$next";
+        $a=$b;
+        $b=$next;
+    }
 }
-$car = new Car('red', 'BMW');
-$car->display();
+fibonacci(7);
