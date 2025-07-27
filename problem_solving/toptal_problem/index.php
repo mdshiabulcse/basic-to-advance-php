@@ -131,66 +131,229 @@
 //$car->display();
 
 
-//$x = 5;
-//echo $x;
-//echo "<br />";
-//echo $x+++$x++;
-//echo "<br />";
-//echo $x;
-//echo "<br />";
-//echo $x-- - $x--;
-//echo "<br />";
-//echo $x;
 
 
-//$array=['a','b','c','d','e','f','a','b','c','d','e','f','a','b','c','d','e','f','a'];
-//function removeDuplicates($array)
-//{
-//    $result=[];
-//    foreach($array as $value){
-//        if(!in_array($value,$result)){
-//            $result[]=$value;
-//        }
-//    }
-//    return $result;
-//}
-//
-//print_r( removeDuplicates($array));
+function bubbleSort($arr)
+{
+    $n = count($arr);
+    for ($i = 0; $i < $n - 1; $i++) {
+        for ($j = 0; $j < $n - $i - 1; $j++) {
+            if ($arr[$j] > $arr[$j + 1]) {
+               list($arr[$j], $arr[$j + 1]) = [$arr[$j + 1], $arr[$j]];;
+            }
+        }
+    }
+    return $arr;
+}
 
-//function reverse($reverse)
-//{
-//    $words=explode(" ",$reverse);
-//    $reverseWords=[];
-//    foreach($words as $word){
-//        $reversed='';
-//        for ($i=strlen($word) -1;$i >=0;$i--){
-//            $reversed.=$word[$i];
-//        }
-//        $reverseWords[]=$reversed;
-//    }
-//    return implode(" ",$reverseWords);
-//
-//}
-//echo reverse("I ma bikhaS");
+$arr=[64, 34, 25, 12, 22, 11, 90];
+print_r(bubbleSort($arr));
 
 
-//function firstNonRepeatingChar($str) {
-//    $charCount = [];
-//
-//    for ($i = 0; $i < strlen($str); $i++) {
-//        $char = $str[$i];
-//        $charCount[$char] = isset($charCount[$char]) ? $charCount[$char] + 1 : 1;
-//    }
-//
-//    for ($i = 0; $i < strlen($str); $i++) {
-//        if ($charCount[$str[$i]] === 1) {
-//            return $str[$i];
-//        }
-//    }
-//    return null;
-//}
-//
-//echo firstNonRepeatingChar("aabbcddeffg");
+die();
+
+function factorial($num)
+{
+    if ($num <= 1) return 1;
+    return $num * factorial($num - 1);
+
+}
+
+echo factorial(5);
+die();
+
+
+function isPrime($num)
+{
+    if ($num < 2) return false;
+    for ($i = 2; $i <= sqrt($num); $i++) {
+
+        echo $i."<br>";
+        if ($num % $i == 0) return false;
+    }
+    return true;
+}
+
+echo isPrime(29) ? 'Prime' : 'Not Prime';
+
+
+
+
+
+die();
+function findSecondLargest($array){
+    if (count($array) < 2){
+        return null;
+    }
+    $first=$second=null;
+    foreach ($array as $value){
+        if(!is_numeric($value)) continue;
+        if ($first === null || $value > $first){
+            $second=$first;
+            $first=$value;
+
+        }elseif ($second === null || $value > $second && $value !== $first){
+            $second=$value;
+
+        }
+
+    }
+    return $second;
+}
+
+
+$arr=[1,2,3,4,5,6,7,8,9,10];
+print_r(findSecondLargest($arr));
+
+die();
+function secondLargest ($array)
+{
+    $array=array_unique($array);
+    reset($array);
+    return $array[1]??null;
+
+}
+
+$numbers=[1,2,3,4,5,6,7,8,9,10];
+print_r(secondLargest($numbers));
+
+die();
+function uniqueValues($array){
+    return array_unique($array);
+}
+
+$array=[1,2,5,6,5,6,4,2,1,1,3,7,7,8,5,8];
+print_r(uniqueValues($array));
+
+die();
+function uniqueValuess($array)
+{
+    $unique = array();
+    foreach ($array as $value) {
+        if (!in_array($value, $unique)) {
+            $unique[] = $value;
+        }
+    }
+    return $unique;
+}
+die();
+
+$email = "john..doe@@example!!.com";
+$sanitized = filter_var($email, FILTER_SANITIZE_EMAIL);
+
+echo "Original: " . $email . "\n";
+echo "Sanitized: " . $sanitized . "\n";
+
+if (filter_var($sanitized, FILTER_VALIDATE_EMAIL)) {
+    echo "Valid email";
+} else {
+    echo "Invalid email";
+}
+
+die();
+
+$user_input='Hello World';
+
+echo FILTER_SANITIZE_EMAIL;
+
+die();
+if (10 === (int)'10'){
+    echo 'true';
+}else{
+    echo 'false';
+}
+
+
+
+
+die();
+
+$file='sample.txt';
+
+file_put_contents($file, 'Hello World');
+
+if (unlink($file)){
+    echo 'File deleted';
+}else{
+    echo 'File not deleted';
+}
+
+
+
+
+
+
+
+
+die();
+
+$name = 'John';
+unset($name);
+echo $name;
+
+
+
+
+$x = 5;
+echo $x;
+echo "<br />";
+echo $x+++$x++;
+echo "<br />";
+echo $x;
+echo "<br />";
+echo $x-- - $x--;
+echo "<br />";
+echo $x;
+
+
+$array=['a','b','c','d','e','f','a','b','c','d','e','f','a','b','c','d','e','f','a'];
+function removeDuplicates($array)
+{
+    $result=[];
+    foreach($array as $value){
+        if(!in_array($value,$result)){
+            $result[]=$value;
+        }
+    }
+    return $result;
+}
+
+print_r( removeDuplicates($array));
+
+function reverse($reverse)
+{
+    $words=explode(" ",$reverse);
+    $reverseWords=[];
+    foreach($words as $word){
+        $reversed='';
+        for ($i=strlen($word) -1;$i >=0;$i--){
+            $reversed.=$word[$i];
+        }
+        $reverseWords[]=$reversed;
+    }
+    return implode(" ",$reverseWords);
+
+}
+echo reverse("I ma bikhaS");
+
+
+function firstNonRepeatingChar($str) {
+    $charCount = [];
+
+    for ($i = 0; $i < strlen($str); $i++) {
+        $char = $str[$i];
+        $charCount[$char] = isset($charCount[$char]) ? $charCount[$char] + 1 : 1;
+    }
+
+    for ($i = 0; $i < strlen($str); $i++) {
+        if ($charCount[$str[$i]] === 1) {
+            return $str[$i];
+        }
+    }
+    return null;
+}
+
+echo firstNonRepeatingChar("aabbcddeffg");
 
 function fibonacci($n)
 {
@@ -204,3 +367,34 @@ function fibonacci($n)
     }
 }
 fibonacci(7);
+
+
+
+
+
+class Animal
+{
+    public $name;
+    public function __construct($name)
+    {
+        $this->name = $name;
+    }
+    public function makeSound() {
+        return "Some generic sound";
+    }
+}
+class Dog extends Animal{
+    public function makeSound()
+    {
+        return ' woof! woof!';
+    }
+    public function fetch()
+    {
+        echo $this->name . 'is fetching the ball';
+    }
+}
+$dog = new Dog('Fido');
+
+echo $dog->makeSound();
+echo "<br/>";
+$dog->fetch();
